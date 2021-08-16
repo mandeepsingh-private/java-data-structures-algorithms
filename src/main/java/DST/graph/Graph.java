@@ -1,4 +1,4 @@
-package graph;
+package DST.graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -120,4 +120,22 @@ public class Graph {
 			}
 		}
 	}
+
+	// Depth first search using stack
+	void dfsUsingRecursion(Node currentVertex, HashMap<Integer, Node> visited) {
+		// put current node in visited
+		visited.put(currentVertex.value, currentVertex);
+		// Print the vertex's value, so we can make sure our traversal really
+		// works
+		System.out.println("Visited: " + currentVertex.value);
+		// Iterate through the current vertex's adjacent vertices
+		for (Node v : currentVertex.adjacentsList) {
+			if (!visited.containsKey(v.value)) {
+				// Recursively call this method on the adjacent vertex:
+				dfsUsingRecursion(v, visited);
+			}
+		}
+
+	}
+
 }

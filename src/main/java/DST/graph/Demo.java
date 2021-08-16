@@ -1,4 +1,6 @@
-package graph;
+package DST.graph;
+
+import java.util.HashMap;
 
 /*
 https://adrianmejia.com/data-structures-for-beginners-graphs-time-complexity-tutorial/#Adjacency-List-Graph-HashMap-Implementation
@@ -69,6 +71,11 @@ public class Demo {
 		graph.bfs(rootUnDirected);
 		System.out.println("Unidirected graph depth first search");
 		graph.dfs(rootUnDirected);
+		System.out.println(
+				"Unidirected graph depth first search using Recursion");
+		// first create a empty hash map to pass for searching
+		HashMap<Integer, Node> visitedVertex = new HashMap<>();
+		graph.dfsUsingRecursion(rootUnDirected, visitedVertex);
 
 	}
 }

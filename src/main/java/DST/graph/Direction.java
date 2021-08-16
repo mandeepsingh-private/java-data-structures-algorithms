@@ -1,4 +1,4 @@
-package graph;
+package DST.graph;
 
 public enum Direction {
 	UNDIRECTED, // 1 - way edges
